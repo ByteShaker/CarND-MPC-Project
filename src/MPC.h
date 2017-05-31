@@ -22,7 +22,7 @@ const int NX =  N * NUMBER_OF_STATES + (N - 1) * NUMBER_OF_ACTUATIONS; // number
 const int NG = N * NUMBER_OF_STATES; // number of constraints
 
 
-// where the first element of each state variable is stored in the vector to be feeded the optimization algorithm
+// Location of parameters
 const int ID_FIRST_px = 0;
 const int ID_FIRST_py = ID_FIRST_px + N;
 const int ID_FIRST_psi = ID_FIRST_py + N;
@@ -32,14 +32,14 @@ const int ID_FIRST_epsi = ID_FIRST_cte + N;
 const int ID_FIRST_delta = ID_FIRST_epsi + N;
 const int ID_FIRST_a = ID_FIRST_delta + N - 1;
 
-// weights for cost computations
+// COST WEIGHTS
 const double W_cte = 15000.0;
 const double W_epsi = 200000.0;
 const double W_v = 8.0;
 const double W_delta = 1000000.0;
 const double W_a = 20.0;
-const double W_ddelta = 100000.0; // weight cost for high difference between consecutive steering actuations
-const double W_da = 100000000.0; // weight cost for high difference between consecutive acceleration actuations
+const double W_ddelta = 100000.0;
+const double W_da = 100000000.0;
 
 class MPC {
 

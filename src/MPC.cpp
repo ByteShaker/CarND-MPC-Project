@@ -103,7 +103,7 @@ public:
             }
 
             // relationship of current state + actuations and next state
-            // based on our kinematic model
+            // kinematic model
             const auto px1_f = px0 + v0 * CppAD::cos(psi0) * dt;
             const auto py1_f = py0 + v0 * CppAD::sin(psi0) * dt;
             const auto psi1_f = psi0 + (v0 * CppAD::tan(-delta0) / Lf) * dt + (a0 * CppAD::tan(-delta0) / (2*Lf)) * dt * dt;
