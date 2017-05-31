@@ -7,7 +7,7 @@ patch CMakeLists.txt < ../cmakepatch.txt
 mkdir build
 export PKG_CONFIG_PATH=/usr/local/opt/openssl/lib/pkgconfig 
 cd build
-cmake ..
+cmake ../..
 make 
 sudo make install
 cd ..
