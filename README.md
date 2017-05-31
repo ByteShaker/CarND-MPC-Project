@@ -4,7 +4,7 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
-###
+
 ##Here's a [link to my video result](./MPC_video)
 As you will see, I was able to achieve speeds over 100 mph. Even driving on an ideal line was possible. The car breaks before strong turns and makes smooth turns.
 The only little mistake I still recognize is, that the predicted and fitted waypoints sometimes shift because of the signal delay. Alltogether I am very happy with my solution.
