@@ -143,7 +143,7 @@ int main() {
             //**************************************************************
             std::vector<double> next_xs(N);
             std::vector<double> next_ys(N);
-            const double T = 10.0;
+            const double T = 20.0;
 
             for (int i = 0; i < N; ++i) {
 
@@ -177,7 +177,7 @@ int main() {
 
             json msgJson;
             msgJson["steering_angle"] = mpc.steer / 0.43633; //rad -> [-1,1]
-            msgJson["throttle"] = mpc.throttle / 2.0; //m/s2 -> [-1,1]
+            msgJson["throttle"] = mpc.throttle / 3.5; //m/s2 -> [-1,1]
 
             msgJson["mpc_x"] = mpc.future_xs;
             msgJson["mpc_y"] = mpc.future_ys;

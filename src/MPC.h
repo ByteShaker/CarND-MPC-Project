@@ -9,8 +9,8 @@
 
 typedef CPPAD_TESTVECTOR(double) Dvector;
 
-const int N = 20; // number of predicted states
-const double dt = 0.1; // time per state
+const int N = 10; // number of predicted states
+const double dt = 0.3; // time per state
 
 const double Lf = 2.67; // this is the length from front of vehicle to Center-of-Gravity
 const double VELOCITY_MAX = 200.0 * 0.44704; // ideal speed -> mph -> m/s2
@@ -33,13 +33,13 @@ const int ID_FIRST_delta = ID_FIRST_epsi + N;
 const int ID_FIRST_a = ID_FIRST_delta + N - 1;
 
 // weights for cost computations
-const double W_cte = 1000.0;
-const double W_epsi = 30000.0;
-const double W_v = 0.50;
-const double W_delta = 2.0;
-const double W_a = 10.0;
-const double W_ddelta = 10000000.0; // weight cost for high difference between consecutive steering actuations
-const double W_da = 100000.0; // weight cost for high difference between consecutive acceleration actuations
+const double W_cte = 15000.0;
+const double W_epsi = 200000.0;
+const double W_v = 8.0;
+const double W_delta = 1000000.0;
+const double W_a = 20.0;
+const double W_ddelta = 100000.0; // weight cost for high difference between consecutive steering actuations
+const double W_da = 100000000.0; // weight cost for high difference between consecutive acceleration actuations
 
 class MPC {
 
