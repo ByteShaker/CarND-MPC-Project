@@ -156,8 +156,8 @@ MPC::MPC() {
     }
 
     for (int i = ID_FIRST_a; i < NX; ++i) {
-        this->x_lowerbound[i] = -7.0;
-        this->x_upperbound[i] = 7.0;
+        this->x_lowerbound[i] = -2.0;
+        this->x_upperbound[i] = 2.0;
     }
 
     //**************************************************************

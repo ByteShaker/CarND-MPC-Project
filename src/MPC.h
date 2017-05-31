@@ -37,9 +37,9 @@ const double W_cte = 1000.0;
 const double W_epsi = 30000.0;
 const double W_v = 0.50;
 const double W_delta = 2.0;
-const double W_a = 4.0;
+const double W_a = 10.0;
 const double W_ddelta = 10000000.0; // weight cost for high difference between consecutive steering actuations
-const double W_da = 100.0; // weight cost for high difference between consecutive acceleration actuations
+const double W_da = 100000.0; // weight cost for high difference between consecutive acceleration actuations
 
 class MPC {
 

@@ -177,7 +177,7 @@ int main() {
 
             json msgJson;
             msgJson["steering_angle"] = mpc.steer / 0.43633; //rad -> [-1,1]
-            msgJson["throttle"] = mpc.throttle / 7.0; //m/s2 -> [-1,1]
+            msgJson["throttle"] = mpc.throttle / 2.0; //m/s2 -> [-1,1]
 
             msgJson["mpc_x"] = mpc.future_xs;
             msgJson["mpc_y"] = mpc.future_ys;
