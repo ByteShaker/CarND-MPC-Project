@@ -108,8 +108,8 @@ public:
             const auto py1_f = py0 + v0 * CppAD::sin(psi0) * dt;
             const auto psi1_f = psi0 + (v0 * CppAD::tan(-delta0) / Lf) * dt + (a0 * CppAD::tan(-delta0) / (2*Lf)) * dt * dt;
             const auto v1_f = v0 + a0 * dt;
-            const auto cte1_f = py_desired - py0 + v0 * CppAD::sin(epsi0) * dt;
-            const auto epsi1_f = psi0 - psi_desired + v0 * (-delta0) / Lf * dt;
+            const auto cte1_f = ((py_desired-py0) + (v0 * CppAD::sin(epsi0) * dt));//py_desired - py1_f;
+            const auto epsi1_f = ((psi0 - psi_desired) + (v0 * CppAD::tan(-delta0) / Lf) * dt);//-CppAD::atan(psi_desired) + psi1_f;
 
             // store the constraint expression of two consecutive states
             fg[ID_CURRENT_px + 2] = px1 - px1_f;
@@ -243,7 +243,7 @@ void MPC::solve(Eigen::VectorXd state, Eigen::VectorXd K) {
             solution);
 
     // comment out the lines below to debug!
-    /*
+
     bool ok = true;
     auto cost = solution.obj_value;
     ok &= solution.status == CppAD::ipopt::solve_result<Dvector>::success;
@@ -252,7 +252,7 @@ void MPC::solve(Eigen::VectorXd state, Eigen::VectorXd K) {
     } else {
       std::cout << "SOMETHING IS WRONG!" << cost << std::endl;
     }
-    */
+
 
     //**************************************************************
     //* STORE RELEVANT INFORMATION FROM SOLUTION
